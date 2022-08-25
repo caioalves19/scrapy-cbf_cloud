@@ -4,7 +4,7 @@ import scrapy
 class CbfSpider(scrapy.Spider):
     name = 'cbf'
     allowed_domains = ['cbf.com.br']
-    start_urls = [f"https://www.cbf.com.br/amp/futebol-brasileiro/competicoes/campeonato-brasileiro-serie-a/2022/{i+1}" for i in range(10)]
+    start_urls = [f"https://www.cbf.com.br/amp/futebol-brasileiro/competicoes/campeonato-brasileiro-serie-a/2022/{i+1}" for i in range(3)]
 
     def parse(self, response):
         numero_jogo = int(response.url.split('/')[-1].split('?')[0])
