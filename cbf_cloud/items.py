@@ -1,5 +1,5 @@
 import scrapy
-from itemloaders.processors import TakeFirst, TakeSecond, Compose
+from itemloaders.processors import TakeFirst, Compose
 
 
 def tratar_nome_time(time):
@@ -22,7 +22,7 @@ class JogoItem(scrapy.Item):
     time_mandante = scrapy.Field(
         output_processor=Compose(TakeFirst(), tratar_nome_time))
     time_visitante = scrapy.Field(
-        output_processor=Compose(TakeSecond(), tratar_nome_time))
+        output_processor=Compose(TakeFirst(), tratar_nome_time))
     data = scrapy.Field(output_processor=TakeFirst())
     hora = scrapy.Field(output_processor=TakeFirst())
     estadio = scrapy.Field(output_processor=TakeFirst())

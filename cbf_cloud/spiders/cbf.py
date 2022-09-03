@@ -31,7 +31,7 @@ class CbfSpider(scrapy.Spider):
 
         jogo.add_value("numero", int(response.url.split("/")[-1]))
         jogo.add_css("time_mandante", ".jogo-equipe-nome-completo::text")
-        jogo.add_css("time_visitante", ".jogo-equipe-nome-completo::text")
+        jogo.add_css("time_visitante", ".jogo-equipe-nome-completo::text", lambda v: v[1])
         jogo.add_value("data", data)
         jogo.add_value("hora", hora)
         jogo.add_value("estadio", local[0])
