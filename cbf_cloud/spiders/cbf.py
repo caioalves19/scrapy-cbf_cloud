@@ -1,5 +1,4 @@
 import scrapy
-import requests
 from scrapy.loader import ItemLoader
 from cbf_cloud.items import JogoItem
 
