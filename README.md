@@ -12,7 +12,7 @@ EXEMPLO DE RESULTADO DO SPIDER:
 
 INSTRUÇÕES
 
-O projeto foi criado no Python 3.9.6 e necessita do Scrapy
+O projeto foi criado no Python 3.9.6, com o Scrapy 2.6.2
 
 Para instalação, basta digitar o comando "pip install -r requirements.txt
 
