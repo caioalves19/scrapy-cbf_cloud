@@ -14,7 +14,13 @@ INSTRUÇÕES
 
 O projeto foi criado no Python 3.9.6, com o Scrapy 2.6.2
 
-Para instalação, basta digitar o comando "pip install -r requirements.txt
+Clone o repositório no local desejado com git clone https://github.com/caioalves19/scrapy-cbf_cloud.git
+
+Inicie um ambiente virtual com python -m venv env
+
+Ative o ambiente virtual com env/Scripts/Activate.ps1
+
+Digitar o comando "pip install -r requirements.txt" para instalar o Scrapy
 
 Depois, entre na pasta do projeto com "cd cbf_cloud"
 
