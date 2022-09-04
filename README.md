@@ -20,7 +20,7 @@ Inicie um ambiente virtual com python -m venv env
 
 Ative o ambiente virtual com env/Scripts/Activate.ps1
 
-Digitar o comando "pip install -r requirements.txt" para instalar o Scrapy
+Digitar o comando "pip install -r spider-requirements.txt" para instalar o Scrapy
 
 Depois, entre na pasta do projeto com "cd cbf_cloud"
 
