@@ -1,4 +1,6 @@
 import scrapy
+import requests
+from requests.auth import HTTPBasicAuth
 from scrapy.loader import ItemLoader
 from cbf_cloud.items import JogoItem
 
@@ -25,8 +27,13 @@ class CbfSpider(scrapy.Spider):
         # Pega a hora no formato "00:00"
         # Se a hora ainda não foi definida, retorna '00:00'
         hora = self.get_hora(response)
+        
+        numero = int(response.url.split("/")[-1])
 
-        jogo.add_value("numero", int(response.url.split("/")[-1]))
+        rodada = self.get_rodada(numero)
+
+        jogo.add_value("rodada", rodada)
+        jogo.add_value("numero", numero)
         jogo.add_css("time_mandante", ".jogo-equipe-nome-completo::text")
         jogo.add_css("time_visitante",
                      ".jogo-equipe-nome-completo::text", lambda v: v[1])
@@ -37,6 +44,13 @@ class CbfSpider(scrapy.Spider):
         jogo.add_value("estado", local[2])
 
         return jogo.load_item()
+
+    def get_rodada(self, numero):
+        rodada = numero // 10
+
+        if numero % 10 != 0:
+            rodada += 1
+        return rodada
 
     def get_hora(self, response):
         hora = response.css(".m-t-15 .text-6::text").get()

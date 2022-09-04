@@ -19,6 +19,7 @@ def tratar_nome_time(time):
 class JogoItem(scrapy.Item):
     # define the fields for your item here like:
     numero = scrapy.Field(output_processor=TakeFirst())
+    rodada = scrapy.Field(output_processor=TakeFirst())
     time_mandante = scrapy.Field(
         output_processor=Compose(TakeFirst(), tratar_nome_time))
     time_visitante = scrapy.Field(
