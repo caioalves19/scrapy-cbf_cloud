@@ -11,9 +11,9 @@ def tratar_nome_time(time):
                    "ATLÉTICO MINEIRO": "Atlético", "ATHLETICO PARANAENSE": "Athletico"}
 
     if nome_time.upper() in nomes_times:
-        return nomes_times[nome_time.upper()] + ' - ' + estado_time
+        return f"{nomes_times[nome_time.upper()]} - {estado_time}"
 
-    return nome_time + ' - ' + estado_time
+    return f"{nome_time} - {estado_time}"
 
 
 class JogoItem(scrapy.Item):
