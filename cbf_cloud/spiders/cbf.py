@@ -67,5 +67,5 @@ class CbfSpider(scrapy.Spider):
     def get_local(self, response):
         local = response.css(".col-xs-12 span::text").get().split(" - ")
         if "a definir" in local[0].lower():
-            local = ["A definir"] * 3
+            local = ["A definir", "A definir", "--"]
         return local
