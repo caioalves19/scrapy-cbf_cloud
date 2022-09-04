@@ -7,7 +7,6 @@
 # useful for handling different item types with a single interface
 import requests
 from requests.auth import HTTPBasicAuth
-from itemadapter import ItemAdapter
 
 
 class CbfCloudPipeline:
@@ -18,7 +17,8 @@ class CbfCloudPipeline:
                           auth=HTTPBasicAuth("caio", "HarperLee"), data=item)
 
         if not r.ok:
-            url=f"https://cbf-jogos.herokuapp.com/jogos/{item['numero']}/"
-            requests.put(url, auth=HTTPBasicAuth("caio", "HarperLee"), data=item)
-        
+            url = f"https://cbf-jogos.herokuapp.com/jogos/{item['numero']}/"
+            requests.put(url, auth=HTTPBasicAuth(
+                "caio", "HarperLee"), data=item)
+
         return item
